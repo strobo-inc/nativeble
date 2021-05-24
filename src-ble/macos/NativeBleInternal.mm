@@ -146,7 +146,7 @@ void NativeBleInternal::indicate(BluetoothUUID service, BluetoothUUID characteri
     [macable setOnCharacteristicUpdated:[=](NSData* data) {
         callback_on_indicate((const uint8_t*) data.bytes, (uint32_t) data.length);
     }];
-    [macable subscribeToNotificationsOnCharacteristic:characteristic_uuid service:service_uuid];
+    [macable subscribeToIndicationsOnCharacteristic:characteristic_uuid service:service_uuid];
 }
 
 void NativeBleInternal::disconnect() {
